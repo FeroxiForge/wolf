@@ -168,7 +168,9 @@ SOFTWARE.
 
 ## Copyright
 
-Copyright © 2026 Feroxi Forge
+Copyright © 2026 Penthux.NET (rust.penthux.net)
 
 \# F3F0    
+\14N4<3:\*
+\EOF<\*>
 
