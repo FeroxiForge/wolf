@@ -8,7 +8,7 @@ WOLF is a conceptual Rust gambling game for fun and wasting free time. There's n
 
 This software is for entertainment purposes only and is released under the [MIT License](LICENSE). The <i>scrap</i> is fictional in-game currency stored in the browser's `localStorage`.
 
-Live WOLF v2.3.3 version: **[Play WOLF](https://rust.penthux.net/index.php?p=wolf)*
+Live WOLF v2.3.3 version: **[Play WOLF](https://rust.penthux.net/index.php?p=wolf)**
 
 ## Table of Contents
 
