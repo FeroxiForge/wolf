@@ -171,6 +171,6 @@ SOFTWARE.
 Copyright © 2026 Penthux.NET (rust.penthux.net)
 
 \# F3F0    
-\14N4<3:\*
+\14N4<3:\*    
 \EOF<\*>
 
