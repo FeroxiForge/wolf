@@ -90,7 +90,7 @@ Scrap is not held in a server-side account and is not shared between different b
 
 ### Resetting Scrap
 
-If you run out of Scrap, you can manually restore your balance to 12.
+If you run out of Scrap, you can manually restore your balance.
 
 1. Open WOLF in your browser.
 2. Open the browser's developer console.
@@ -101,7 +101,9 @@ If you run out of Scrap, you can manually restore your balance to 12.
    location.reload();
    ```
 
-Alternatively, remove the saved balance and let the game initialise it again:
+- *12* is the amount of scrap to allocate. Increase/decrease this value accordingly.
+
+Alternatively, remove the browser-stored value and let the game initialise it again:
 
 ```javascript
 localStorage.removeItem("feroxi_wolf_scrap");
