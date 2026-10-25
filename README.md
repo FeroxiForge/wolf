@@ -1,183 +1,121 @@
-
-
 # Wheel Of Lost Fortune (WOLF)
 
-WOLF (Wheel Of Lost Fortune) is a JavaScript browser game inspired by Rust's Bandit Camp Big Wheel.
+WOLF is a JavaScript browser game based on Rust's Bandit Camp Big Wheel.
 
-**Live game:** [https://rust.penthux.net/index.php?p=wolf](https://rust.penthux.net/index.php?p=wolf)
+This software is for entertainment purposes only and is released under the [MIT License](LICENSE). Scrap is fictional in-game currency stored in the browser's `localStorage`. It has no real-world monetary value.
 
-## Description
+**[Play Wheel Of Lost Fortune online](https://rust.penthux.net/index.php?p=wolf)**
 
-WOLF is a browser-based game created for entertainment purposes only and released under the MIT License. See `LICENSE` for details.
+## Running WOLF
 
-Scrap is the in-game currency. Your balance is stored locally in your browser using `localStorage` and persists between visits in the same browser and website origin.
+WOLF is a browser-based game built with HTML, CSS and JavaScript.
 
-If you run out of Scrap, you can manually reset your balance to the starting amount of 12 Scrap using the instructions below.
+1. Clone or download this repository.
+2. Keep the directory structure and referenced assets intact.
+3. Open [`index.html`](index.html) in your web browser.
 
-Scrap has no real-world monetary value.
+No build step or package installation is required. JavaScript must be enabled in your browser.
+
+To publish the game using GitHub Pages, see the [official GitHub Pages documentation](https://docs.github.com/en/pages/getting-started-with-github-pages/creating-a-github-pages-site).
 
 ## How to Play
 
-You begin with **12 Scrap**. Choose one or more numbers, place your bets, spin the wheel, and hope Lady Luck is on your side.
+You begin with **12 Scrap**. Choose one or more numbers on the wheel and place your bets.
 
-### 1. Place Your Bets
+The wheel contains 25 sectors labelled 1, 3, 5, 10 and 20. Your total stake cannot exceed the amount of Scrap you currently own, and you must place at least one bet before spinning.
 
-The wheel contains five possible numbers:
+### Placing Bets
 
-- `1`
-- `3`
-- `5`
-- `10`
-- `20`
+- Use the number fields to enter your stakes.
+- Use 🔼 to increase a stake by one Scrap.
+- Use 🔽 to decrease a stake by one Scrap.
+- Use ❌ to clear an individual stake.
+- Press **RESET ALL** to clear all current bets without changing your Scrap balance.
+- Press **PLAY NOW!** to commit your total stake and spin the wheel.
 
-Choose one or more numbers and place your bets using the controls beside each number.
+Each spin takes approximately 10 seconds. Your bets are cleared when the spin finishes.
 
-- **🔼 Increase your bet** — increase the stake on that number by 1 Scrap.
-- **🔽 Decrease your bet** — decrease the stake on that number by 1 Scrap.
-- **❌ Clear your bet** — remove the stake on that number.
+### Wheel Sectors and Payouts
 
-Your total stake across all numbers cannot exceed your current Scrap balance. You must place at least one bet before you can spin the wheel.
+| Number | Sectors | Chance | Winning payout |
+| ---: | ---: | ---: | ---: |
+| 1 | 12 of 25 | 48% | 2× stake |
+| 3 | 6 of 25 | 24% | 4× stake |
+| 5 | 4 of 25 | 16% | 6× stake |
+| 10 | 2 of 25 | 8% | 11× stake |
+| 20 | 1 of 25 | 4% | 21× stake |
 
-### 2. Spin the Wheel
+A winning payout includes the return of your winning stake, plus winnings equal to the winning number multiplied by that stake.
 
-When you're ready, press **PLAY NOW!** to spin the wheel.
+For example, a 2-Scrap bet on 5 returns 12 Scrap if the wheel lands on 5: the original 2 Scrap plus 10 Scrap in winnings.
 
-If the wheel lands on a number you backed, your winning stake is returned, along with winnings equal to that number multiplied by your winning stake.
+Your total stake is deducted before the spin. Stakes on losing numbers are lost, even if another number wins.
 
-**Example:** If you bet 2 Scrap on `5` and the wheel lands on `5`, you receive your 2-Scrap stake back plus 10 Scrap in winnings — a total payout of 12 Scrap.
+## Scrap Balance and Storage
 
-Any other stakes placed on losing numbers are lost.
+Your Scrap balance is stored locally in your browser using `localStorage`.
 
-### 3. Manage Your Bets
+The storage key is:
 
-- **RESET ALL** — clear all your current bets without changing your Scrap balance.
-- **❌** — clear an individual bet while leaving your other bets in place.
+`feroxi_wolf_scrap`
 
-After each spin, your bets are cleared automatically so you can decide what to do next.
+The game initialises the balance at 12 Scrap when no valid saved balance exists. Your balance persists across page reloads and browser restarts within the same browser storage context.
 
-### 4. Keep an Eye on Your Scrap
+Scrap is not held in a server-side account and is not shared between different browsers or devices. Reloading the page does not restore Scrap that you have lost.
 
-Your current balance is displayed as **TOTAL SCRAP**, and the combined value of your active bets is displayed as **YOUR BET**.
+### Resetting Scrap
 
-Your Scrap balance is saved in your browser. Reloading the page, closing the browser, shouting at the wheel, or blaming Feroxi Forge will not restore Scrap you've lost.
+If you run out of Scrap, you can manually restore your balance to 12.
 
-If you lose everything, congratulations! You're officially broke. It's time to get grinding for more Scrap so you can lose it all over again.
+1. Open WOLF in your browser.
+2. Open the browser's developer console.
+3. Run the following JavaScript:
 
-WOLF uses imaginary Scrap only. There is no real money, no worldly value, and no prizes. There is absolutely no reason to take any of this seriously.
+   ```javascript
+   localStorage.setItem("feroxi_wolf_scrap", "12");
+   location.reload();
+   ```
 
-## Reset Your Scrap Back to 12
+Alternatively, remove the saved balance and let the game initialise it again:
 
-WOLF stores your Scrap balance in browser `localStorage` under this key:
-
-```
-feroxi_wolf_scrap
-```
-
-The balance is stored separately for each website origin. Make sure you run the reset command on the same WOLF website where you want your balance reset.
-
-### 1. Open WOLF
-
-Use the appropriate address:
-
-- **Live website:** [https://rust.penthux.net/index.php?p=wolf](https://rust.penthux.net/index.php?p=wolf)
-- **Local network:** [http://kron.penthux.lan/rust/?p=wolf](http://kron.penthux.lan/rust/?p=wolf)
-
-### 2. Open the Browser Developer Tools
-
-In most browsers, press:
-
-```
-F12
-```
-
-Alternatively, press:
-
-```
-Ctrl + Shift + I
-```
-
-### 3. Open the Console
-
-Select the **Console** tab in the developer tools.
-
-### 4. Reset Your Scrap
-
-Enter this exact command into the console:
-
-```
-localStorage.setItem("feroxi_wolf_scrap", "12");
-```
-
-Press **Enter**.
-
-This sets your stored WOLF balance to exactly 12 Scrap.
-
-### 5. Reload the Page
-
-Reload WOLF normally by pressing:
-
-```
-Ctrl + R
-```
-
-Your balance should now display:
-
-```
-TOTAL SCRAP: 12
-YOUR BET: 0
-```
-
-You're back in business!
-
-### Why Refreshing Alone Doesn't Reset Your Scrap
-
-WOLF deliberately saves your Scrap balance in `localStorage`. When the game loads, its `LoadScrap()` function reads the saved value and uses it if it is a valid, non-negative integer.
-
-That means a stored balance of `0` is perfectly valid. Reloading the page simply loads that same zero balance again.
-
-WOLF automatically restores the starting balance of 12 only when the stored value is missing, invalid, or negative.
-
-In other words, if your stored balance is zero, the game quite correctly concludes that you're broke. Refreshing won't bail you out.
-
-### Alternative: Start as Though You've Never Played Before
-
-If you want WOLF to behave as though you have never played before, you can remove the stored balance instead.
-
-In the browser console, enter:
-
-```
+```javascript
 localStorage.removeItem("feroxi_wolf_scrap");
+location.reload();
 ```
 
-Press **Enter**, then reload the page.
+**Note:** The **RESET ALL** button only clears your current bets. It does not reset your Scrap balance.
 
-Because the storage entry is now missing, WOLF will initialise a fresh balance of 12 Scrap.
+Browser behaviour for `localStorage` when opening files directly using a `file://` URL can vary. Storage persistence depends on the browser and its storage context.
 
-**For a straightforward reset, use the first command** — `localStorage.setItem("feroxi_wolf_scrap", "12");` — to set your balance directly to 12.
+## Project Files and Assets
 
-## Running the Game
+The game relies on its HTML, CSS, JavaScript and supporting assets being kept at their expected relative paths.
 
-WOLF is a browser-based game built with HTML, CSS, and JavaScript.
+| File or directory | Description |
+| --- | --- |
+| [`index.html`](index.html) | HTML entry point for the game |
+| [`css/feroxi.css`](css/feroxi.css) | Feroxi Forge stylesheet |
+| [`css/feroxi_wolf.css`](css/feroxi_wolf.css) | WOLF-specific styling |
+| [`js/feroxi_wolf.js`](js/feroxi_wolf.js) | Game logic, wheel animation, betting and Scrap storage |
+| [`avhub/audio/`](avhub/audio/) | Sound effects used by the game |
+| [`htm/font/`](htm/font/) | Font assets referenced by the stylesheet |
+| [`img/`](img/) | Image assets referenced by the stylesheet |
+| [`img/icons/`](img/icons/) | Icon assets |
+| [`img/marks/`](img/marks/) | Mark and logo assets |
+| [`img/bkgd/`](img/bkgd/) | Background images |
+| [`LICENSE`](LICENSE) | MIT License terms |
 
-- Open `index.html` in a web browser to run the game locally.
-- Alternatively, publish the repository using GitHub Pages.
+### Audio Assets
 
-Keep the referenced assets at their expected paths so that relative URLs continue to resolve.
+The JavaScript references the following sound effects in `avhub/audio/`:
 
-## File Locations
+- `ratchet-clicking.mp3` — wheel ratchet sound.
+- `wheel-spin-click-slow-down.mp3` — wheel slowdown sound.
 
-- `index.html` — game markup and entry point
-- `css/feroxi.css` — existing Feroxi Forge stylesheet
-- `js/feroxi_wolf.js` — WOLF game logic
-- `avhub/audio/` — sound effects referenced by the JavaScript
-- `htm/font/` — font assets referenced by the stylesheet
-- `img/icons/` — icon assets
-- `img/marks/` — marks and logo assets
-- `img/bkgd/` — background images
+Keep these files at their expected paths and retain their filenames so the game can load them correctly.
 
-Keep the directory structure and filenames intact when adding or updating assets, unless you also update the paths that reference them.
+The same applies to the fonts and images referenced by the stylesheets. If you move or rename an asset, update the corresponding reference in the code.
 
 ## License
 
-WOLF is released under the MIT License. See the `LICENSE` file for the full licence text.
-
+WOLF is released under the [MIT License](LICENSE).
