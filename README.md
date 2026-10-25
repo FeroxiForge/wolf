@@ -1,8 +1,12 @@
-# Wheel Of Lost Fortune (WOLF)
 
-WOLF is a JavaScript browser game based on Rust's Bandit Camp Big Wheel.
 
-This software is for entertainment purposes only and is released under the [MIT License](LICENSE). Scrap is fictional in-game currency stored in the browser's `localStorage`. It has no real-world monetary value.
+# Wheel Of Lost Fortune - a.k.a WOLF
+
+Wheel Of Lost Fortune [WOLF] is a JavaScript browser game based on Rust's Bandit Camp Big Wheel.
+
+WOLF is a conceptual Rust gambling game for fun and wasting free time. There's no actual currency involved and the <i>scrap</i> used as currency has no real world value. It's purely cosmetic for game purposes.
+
+This software is for entertainment purposes only and is released under the [MIT License](LICENSE). The <i>scrap</i> is fictional in-game currency stored in the browser's `localStorage`.
 
 **[Play Wheel Of Lost Fortune online](https://rust.penthux.net/index.php?p=wolf)**
 
@@ -118,4 +122,11 @@ The same applies to the fonts and images referenced by the stylesheets. If you m
 
 ## License
 
-WOLF is released under the [MIT License](LICENSE).
+WOLF is released under the [MIT License](LICENSE) and anyone is free to do with this software as they please. You are able to copy it, share it, distribute it, host it on your websites, or even make money from it. The only requirement is that you keep the "Copyright © 2026 Penthux.NET (rust.penthux.net)" details and [MIT License](LICENSE) intact, whatever you choose to do with it.
+
+## Copyright
+
+Copyright © 2026 Penthux.NET (rust.penthux.net)
+
+\# F3F0    
+
