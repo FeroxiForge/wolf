@@ -122,15 +122,11 @@ The game relies on its HTML, CSS, JavaScript and supporting assets being kept at
 | --- | --- |
 | [`index.html`](index.html) | HTML entry point for the game |
 | [`css/feroxi.css`](css/feroxi.css) | Feroxi Forge stylesheet |
-| [`css/feroxi_wolf.css`](css/feroxi_wolf.css) | WOLF-specific styling |
 | [`js/feroxi_wolf.js`](js/feroxi_wolf.js) | Game logic, wheel animation, betting and Scrap storage |
 | [`avhub/audio/`](avhub/audio/) | Sound effects used by the game |
 | [`htm/font/`](htm/font/) | Font assets referenced by the stylesheet |
-| [`img/`](img/) | Image assets referenced by the stylesheet |
-| [`img/icons/`](img/icons/) | Icon assets |
-| [`img/marks/`](img/marks/) | Mark and logo assets |
-| [`img/bkgd/`](img/bkgd/) | Background images |
-| [`LICENSE`](LICENSE) | MIT License terms |
+| [`img/`](img/) | Image assets referenced by GitHub README.md |
+| [`LICENSE`](LICENSE) | Copyright notice and MIT License terms |
 
 ### Audio Assets
 
@@ -145,7 +141,7 @@ The same applies to the fonts and images referenced by the stylesheets. If you m
 
 ## License
 
-WOLF is released under the [MIT License](LICENSE) and anyone is free to do with this software as they please. You are able to copy it, share it, distribute it, host it on your websites, or even make money from it. The only requirement is that you keep the "Copyright © 2026 Penthux.NET (rust.penthux.net)" details and [MIT License](LICENSE) intact, whatever you choose to do with it.
+WOLF is released under the [MIT License](LICENSE) and anyone is free to do with this software as they please. You are able to copy it, share it, distribute it, host it on your websites, or even make money from it. The only requirement is that you keep the "Copyright © 2026 Penthux.NET (rust.penthux.net)" notice and [MIT License](LICENSE) intact, whatever you choose to do with it.
 
 ```text
 MIT License
