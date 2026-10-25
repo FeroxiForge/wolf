@@ -1,0 +1,1074 @@
+/*
+ * Feroxi Forge - Dedicated To Rust 
+ *
+ * Main CSS layout for https://rust.penthux.net
+ *
+ * (c) 2026 rust.penthux.net
+ *
+ */
+
+/*
+ * Feroxi Forge fonts
+ */
+
+@font-face {
+    font-family: "Oxanium";
+    src: url("../htm/font/Oxanium-Regular.ttf") format("truetype");
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Oxanium";
+    src: url("../htm/font/Oxanium-Bold.ttf") format("truetype");
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Rust";
+    src: url("../htm/font/Rust.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+/*
+ * Feroxi Forge global CSS variables
+ *
+ * Schema: hot-forge analogous palette
+ */
+
+:root {
+    --cookie-popup-bkgd: rgba(0, 0, 0, 0.5);
+    --cookie-panel-bkgd: #111111;
+    --cookie-panel-border: #cd412b;
+    --cookie-title-text: #ff8800;
+    --cookie-body-text: #f4f1e8;
+    --cookie-button-text: #111111;
+    --cookie-accept: #66cc66;
+    --cookie-decline: #ff3300;
+
+    --main-border: #cd412b;
+    --updon-text: #888888;
+
+    --server-row-a: #343434;
+    --server-row-b: #232323;
+    --server-row-text: #dddddd;
+    --server-online: #00ff00;
+    --server-offline: #ff0000;
+
+    --rust-tty-bkgd: #000000;
+    --rust-tty-border: #cd412b;
+    --rust-tty-text: #39ff14;
+    --rust-tty-title-text: #dddddd;
+    --rust-tty-screen-glow: rgba(0, 128, 0, 0.75);
+    --rust-tty-text-glow: rgba(0, 255, 0, 0.75);
+    --rust-tty-shadow: rgba(10, 10, 10, 0.95);
+    --rust-tty-scan-clear: rgba(18, 16, 16, 0);
+    --rust-tty-scan-dark: rgba(0, 0, 0, 0.2);
+
+    --ffmuse-bkgd: #232323;
+    --ffmuse-border: #cd412b;
+    --ffmuse-text: #eeeeee;
+    --ffmuse-icon: url("../img/icons/ff_muse_64.png");
+	
+    --montage-watermark: url("../img/marks/c2026_ff_watermark24_125.png");
+	
+	--dark-mode-viewport-bar: #2b41cd;		
+	--dark-mode-bkgd: #111111;
+    --dark-mode-grunge-bkgd: url("../img/bkgd/grunge_dark_bkgd.jpg");	
+    --dark-mode-text: #dddddd;
+    --dark-mode-text-link: #cd412b;
+    --dark-mode-text-hover: #ff8800;
+
+    --navb-dark-hover-text: #dddddd;
+    --navb-dark-hover-glow: #ff3300;
+    --navb-dark-hover-underglow: #ff6600;
+    --navb-dark-hover-bkgd: url("../img/bkgd/ff_buttonbkgd_dark_600-120.jpg");
+
+	--light-mode-viewport-bar: #cd412b; 
+	--light-mode-bkgd: #dddddd;
+    --light-mode-grunge-bkgd: url("../img/bkgd/grunge_light_bkgd.jpg");
+    --light-mode-text: #111111;
+	--light-mode-text-link: #1111ee;
+	--light-mode-text-hover: #c51a4a;
+
+    --navb-light-hover-text: #000000;
+    --navb-light-hover-glow: #ff3300;
+    --navb-light-hover-underglow: #ff6600;
+    --navb-light-hover-bkgd: url("../img/bkgd/ff_buttonbkgd_light_600-120.jpg");
+}
+
+/*
+ * Feroxi Forge daytime colour scheme
+ *
+ * The day/night switch is a CSS checkbox control in the navigation
+ * base. When the checkbox is selected, the active site background
+ * and text colours are replaced with the daytime palette.
+ *
+ */
+
+html:has(#theme-toggle:checked) {
+    --dark-mode-bkgd: var(--light-mode-bkgd);
+    --dark-mode-grunge-bkgd: var(--light-mode-grunge-bkgd);
+    --dark-mode-text: var(--light-mode-text);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100%;
+}
+
+body {
+    background: var(--dark-mode-bkgd) var(--dark-mode-grunge-bkgd) repeat;
+    color: var(--dark-mode-text);
+    font-family: "Oxanium", sans-serif;
+
+    /* Global default font size */
+    font-size: 1rem;
+
+   /*
+    * Keep the page clear of the immutable viewport bars!
+    */
+    padding-top: 3px;
+    padding-bottom: 3px;
+}
+
+/*
+ * MAIN
+ */
+#main {
+    margin-top: 20px;
+    padding: 20px;
+
+    border: 2px solid var(--main-border);
+    border-radius: 10px;
+
+    font-size: 1.125rem;
+}
+
+.updon {
+    margin-top: 20px;
+
+    color: var(--updon-text);
+    font-size: 0.75rem;
+    text-align: center;
+}
+
+/*
+ * Back To Top
+ */
+.backtotop {
+	margin-top: 35px;
+    text-align: center;
+}
+
+.backtotop a {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+
+    border: 2px solid var(--dark-mode-text-link);
+    border-radius: 10px;
+}
+
+/*
+ * Feroxi Forge inline button
+ */
+.ffbutton {
+    appearance: none;
+    padding: 0.2rem 0.55rem;
+	
+	margin: 0 6px;
+
+    border: 1px solid var(--dark-mode-text-link);
+    border-radius: 3px;
+
+    background: transparent;
+    color: var(--dark-mode-text-link);
+
+    font: inherit;
+    line-height: 1.2;
+
+    cursor: pointer;
+}
+
+.ffbutton:hover {
+    border-color: var(--dark-mode-text-hover);
+    color: var(--dark-mode-text-hover);
+}
+
+html:has(#theme-toggle:checked) .ffbutton {
+    border-color: var(--light-mode-text-link);
+    color: var(--light-mode-text-link);
+}
+
+html:has(#theme-toggle:checked) .ffbutton:hover {
+    border-color: var(--light-mode-text-hover);
+    color: var(--light-mode-text-hover);
+}
+
+.seasonal-event {
+    text-align: left;
+}
+
+/* Feroxi Forge muse dialog box */
+#main .ffmuse {
+  font-size: 1.125rem;
+  color: var(--ffmuse-text);
+  font-family: "Oxanium", sans-serif;
+  background: var(--ffmuse-bkgd);
+  border: 1px solid var(--ffmuse-border);
+  padding-top: 30px;
+  padding-left: 12px;
+  padding-right: 12px;
+  width: auto;
+  margin: 16px 50px 16px 50px;
+  overflow: auto;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px var(--rust-tty-shadow);
+  position: relative;
+}
+
+#main .ffmuse p {
+  font-style: italic;
+}
+
+#main .ffmuse::before {
+  content: "";
+  position: absolute;
+  top: 10px;
+  left: 14px;
+  width: 24px;
+  height: 24px;
+  background-image: var(--ffmuse-icon);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+
+/* Feroxi Forge rust-tty screen */
+#main .rust-tty {
+  background: var(--rust-tty-bkgd);
+  background-image: radial-gradient(
+    var(--rust-tty-screen-glow), var(--rust-tty-bkgd) 120%
+  );  
+  border: 1px solid var(--rust-tty-border);
+  border-top: 3px solid var(--rust-tty-border); 
+  border-radius: 10px;
+  padding: 20px;
+  font-family: 'Courier New', monospace;
+  text-shadow: 0 0 2px var(--rust-tty-text-glow);  
+  color: var(--rust-tty-text);
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  box-shadow: 0 10px 30px var(--rust-tty-shadow);
+  margin: 30px 50px; 
+  width: auto;
+  position: relative;
+  overflow: visible;
+  animation: flicker 0.15s infinite;
+}
+
+#main .rust-tty::before {
+  content: " cobaltOS ";
+  position: absolute;
+  top: -14px;            
+  left: 20px;            
+  background: var(--rust-tty-border);   
+  padding: 2px 6px;        
+  color: var(--rust-tty-title-text);
+  font-size: 0.875rem;
+  font-weight: bold;
+  text-transform: none;
+  z-index: 10;
+}
+
+#main .rust-tty::after {
+  content: " ";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: linear-gradient(
+    var(--rust-tty-scan-clear) 75%, 
+	var(--rust-tty-scan-dark) 75%
+  );
+  z-index: 2;
+  background-size: 100% 4px, 3px 100%; 
+  pointer-events: none; 
+  border-radius: inherit;
+  animation: scan 100s linear infinite;
+}
+
+@keyframes scan {
+  from { background-position: 0 0; }
+  to { background-position: 0 100%; }
+}
+
+#main .rust-tty .cursor {
+  display: inline-block;
+  animation: blink 1.5s step-end infinite;
+}
+
+@keyframes blink {
+  50% { opacity: 0; }
+}
+
+/*
+ * Contact email reveal button
+ */
+#show-email {
+	margin-top: 10px;
+    padding: 0.5rem 1rem;
+
+    border: 2px solid var(--dark-mode-text-link);
+    border-radius: 10px;
+
+    background: transparent;
+    color: var(--dark-mode-text-link);
+
+    font-family: "Oxanium", sans-serif;
+    font-size: 1rem;
+
+    cursor: pointer;
+}
+
+html:has(#theme-toggle:checked) #show-email {
+    color: var(--light-mode-text-link);
+}
+
+#show-email:hover {
+    color: var(--dark-mode-text-hover);
+    border-color: var(--dark-mode-text-hover);
+}
+
+/*
+ * Feroxi Forge MAIN content button hover effects
+ */
+.backtotop a,
+.ffbutton,
+#show-email {
+    transition: all 0.2s ease-in-out;
+}
+
+.backtotop a:hover,
+.ffbutton:hover,
+#show-email:hover {
+    color: var(--dark-mode-text-hover);
+    background: var(--navb-dark-hover-bkgd) center / cover no-repeat;
+    border-color: var(--dark-mode-text-hover);
+    text-shadow: none;
+    box-shadow: 0 0 4px var(--navb-dark-hover-glow);
+}
+
+html:has(#theme-toggle:checked) .backtotop a:hover,
+html:has(#theme-toggle:checked) .ffbutton:hover,
+html:has(#theme-toggle:checked) #show-email:hover {
+    color: var(--light-mode-bkgd);
+    background: var(--navb-light-hover-bkgd) center / cover no-repeat;
+    border-color: var(--light-mode-text-hover);
+    text-shadow: none;
+    box-shadow: 0 0 4px var(--navb-light-hover-glow);
+}
+
+/*
+ * Links official marks
+ */
+.links-official-marks {
+    width: min(100%, 480px);
+    margin: 20px auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.links-official-marks img {
+    display: block;
+}
+
+/*
+ * Links centred content
+ */
+.links-center {
+    text-align: center;
+}
+
+/*
+ * MAIN headings
+ */
+h1 {
+    font-size: 2rem;
+    text-align: center;
+}
+
+h2 {
+    font-size: 1.75rem;
+}
+
+h3 {
+    font-size: 1.5rem;
+}
+
+h4 {
+    font-size: 1.375rem;
+}
+
+h5 {
+    font-size: 1.25rem;
+}
+
+h6 {
+    font-size: 1.125rem;
+}
+
+/*
+ * Feroxi Forge text links
+ */
+
+a {
+    color: var(--dark-mode-text-link);
+    text-decoration: none;
+}
+
+a:visited {
+    color: var(--dark-mode-text-link);
+}
+
+a:hover {
+    color: var(--dark-mode-text-hover);
+}
+
+a:active {
+    color: var(--dark-mode-text-hover);
+}
+
+/*
+ * Feroxi Forge daytime text links
+ *
+ * Day mode uses the dedicated daytime link and hover colours while
+ * leaving the normal night-mode link colours unchanged.
+ */
+
+html:has(#theme-toggle:checked) a,
+html:has(#theme-toggle:checked) a:visited {
+    color: var(--light-mode-text-link);
+}
+
+html:has(#theme-toggle:checked) a:hover,
+html:has(#theme-toggle:checked) a:active {
+    color: var(--light-mode-text-hover);
+}
+
+/*
+ * Permanent viewport bars
+ */
+
+body::before,
+body::after {
+    content: "";
+    position: fixed;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: var(--light-mode-viewport-bar);
+    z-index: 1000;
+}
+
+body::before {
+    top: 0;
+}
+
+body::after {
+    bottom: 0;
+}
+
+/*
+ * RUST MARK
+ *
+ * Independent Rust identity block.
+ */
+
+#rustmarks {
+    height: 48px;
+
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+#rustmarks img {
+    display: block;
+    width: 48px;
+    height: 48px;
+    flex: 0 0 48px;
+}
+
+#rustmarks span {
+    font-family: "Rust", sans-serif;
+    font-size: 3.5rem;
+    line-height: 1;
+    color: var(--dark-mode-text);
+}
+
+/*
+ * NAVMENU
+ */
+
+#navmenu {
+    text-align: center;
+
+    display: flex;
+    flex-direction: column;
+}
+
+#navhead {
+    flex: 0 0 auto;
+    padding-top: 10px;
+}
+
+#nav-search {
+    width: 280px;
+    height: 50px;
+    margin: 20px auto 20px auto;
+    padding: 4px 5px 4px 12px;
+
+    box-sizing: border-box;
+    border: 2px solid var(--dark-mode-text-link);
+    border-radius: 10px;
+
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+#nav-search-input {
+    flex: 1 1 auto;
+    min-width: 0;
+
+    border: 0;
+    background: transparent;
+    color: var(--dark-mode-text);
+
+    font-family: "Oxanium", sans-serif;
+    font-size: 1rem;
+}
+
+#nav-search-button {
+    width: 38px;
+    height: 38px;
+    padding: 0;
+
+    border: 0;
+    background: transparent;
+
+    cursor: pointer;
+    flex: 0 0 38px;
+}
+
+#nav-search-button img {
+    display: block;
+    width: 38px;
+    height: 38px;
+}
+
+#navcontent {
+    flex: 1 1 auto;
+    min-height: 0;
+    padding-top: 0;
+}
+
+#navbuttons {
+    width: 280px;
+    margin-top: 0;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 40px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+#navmenu .navbutton {
+    width: 280px;
+    height: 50px;
+    box-sizing: border-box;
+    border: 2px solid var(--dark-mode-text-link);
+    border-radius: 10px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    transition: all 0.2s ease-in-out;
+}
+
+#navmenu .navbutton:hover {
+    color: var(--dark-mode-text-hover);
+    background: var(--navb-dark-hover-bkgd) center / cover no-repeat;
+    border-color: var(--dark-mode-text-hover);
+    text-shadow: none;
+    box-shadow: 0 0 4px var(--navb-dark-hover-glow);
+}
+
+html:has(#theme-toggle:checked) #navmenu .navbutton:hover {
+    color: var(--light-mode-bkgd);
+    background: var(--navb-light-hover-bkgd) center / cover no-repeat;
+    border-color: var(--light-mode-text-hover);
+    text-shadow: none;
+    box-shadow: 0 0 4px var(--navb-light-hover-glow);
+}
+
+#navbase {
+    flex: 0 0 auto;
+}
+
+#nav-charter {
+    font-size: 0.75rem;
+}
+
+#feroxi-meantime {
+    margin: 10px 0 10px 0;
+
+    font-size: 0.75rem;
+    line-height: 1.3;
+    text-align: center;
+}
+
+/*
+ * Feroxi Forge day/night display mode switch
+ *
+ * The checkbox holds the current display-mode state but is visually
+ * hidden. Its associated label provides the visible sliding switch.
+ *
+ * NIGHT is the default state. Selecting DAY slides the Rust-coloured
+ * indicator to the left and activates the daytime colour scheme.
+ */
+
+#theme-toggle {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: 0;
+    opacity: 0;
+    pointer-events: none;
+}
+
+/*
+ * Visible day/night switch track.
+ *
+ * The switch retains the existing 146 x 38 pixel navbase footprint.
+ */
+
+#theme-switch {
+    position: relative;
+
+    width: 146px;
+    height: 38px;
+    margin: 0 auto 20px auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    border: 2px solid var(--dark-mode-text-link);
+    border-radius: 10px;
+    background: transparent;
+
+    font-family: "Oxanium", sans-serif;
+    font-size: 0.875rem ;
+
+    cursor: pointer;
+    overflow: hidden;
+
+    transition: all 0.2s ease-in-out;
+}
+
+/*
+ * Sliding Rust-coloured indicator.
+ *
+ * NIGHT is on the right by default. When the checkbox is selected,
+ * the indicator moves left to DAY.
+ */
+
+#theme-switch::before {
+    content: "";
+
+    position: absolute;
+    top: 3px;
+    left: 3px;
+
+    width: 66px;
+    height: 28px;
+
+    border-radius: 7px;
+    background: var(--dark-mode-text-link);
+
+    transform: translateX(68px);
+    transition: transform 0.25s ease;
+}
+
+/*
+ * DAY and NIGHT labels sit above the moving indicator.
+ */
+
+#theme-switch span {
+    position: relative;
+    z-index: 1;
+
+    width: 50%;
+
+    text-align: center;
+    color: var(--dark-mode-text-link);
+}
+
+/*
+ * NIGHT is the active label in the default dark display mode.
+ */
+
+#theme-switch .theme-night {
+    color: var(--light-mode-text);
+}
+
+/*
+ * Selecting DAY moves the indicator to the left and swaps the
+ * active-label colours.
+ */
+
+#theme-toggle:checked + #theme-switch::before {
+    transform: translateX(0);
+}
+
+#theme-toggle:checked + #theme-switch .theme-day {
+    color: var(--light-mode-text);
+}
+
+#theme-toggle:checked + #theme-switch .theme-night {
+    color: var(--dark-mode-text-link);
+}
+
+/*
+ * Match the existing Feroxi Forge hover colour when the pointer
+ * is over the day/night display mode switch.
+ */
+
+#theme-switch:hover {
+    background: var(--navb-dark-hover-bkgd) center / cover no-repeat;
+    border-color: var(--dark-mode-text-hover);
+    box-shadow: 0 0 4px var(--navb-dark-hover-glow);
+}
+
+#theme-switch:hover span {
+    color: var(--dark-mode-text-hover);
+}
+
+html:has(#theme-toggle:checked) #theme-switch:hover {
+    background: var(--navb-light-hover-bkgd) center / cover no-repeat;
+    border-color: var(--light-mode-text-hover);
+    box-shadow: 0 0 4px var(--navb-light-hover-glow);
+}
+
+html:has(#theme-toggle:checked) #theme-switch:hover span {
+    color: var(--light-mode-bkgd);
+}
+
+/*
+ * Provide a visible keyboard-focus indicator for accessibility.
+ */
+
+#theme-toggle:focus-visible + #theme-switch {
+    outline: 2px solid var(--dark-mode-text-hover);
+    outline-offset: 2px;
+}
+
+/*
+ * TOP BANNER
+ *
+ * Display top banner images in 16:9 ratio format - 1200x675 px 
+ */
+
+#topbanner {
+    position: relative;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+}
+
+#topbanner img.montage {
+    position: absolute;
+    inset: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+    opacity: 0;
+	/* Feroxi Forge montage transition speed fade-out [secs] */
+    transition: opacity 5s ease-in-out;
+}
+
+#topbanner img.montage.active {
+    opacity: 1;
+}
+
+/*
+* Feroxi Forge montage watermark
+*/
+#topbanner::after {
+    content: "";
+    position: absolute;
+    right: 1%;
+    bottom: 1.8%;
+    width: min(10.42%, 125px);
+    aspect-ratio: 1 / 1;
+    background: var(--montage-watermark) center / contain no-repeat;
+    pointer-events: none;
+    z-index: 1;
+}
+
+/*
+ * FOOTER
+ *
+ * Height is determined entirely by its contents.
+ */
+
+#footer {
+    height: auto;
+    text-align: center;
+}
+
+#footer-disclaimer {
+    width: 80%;
+    max-width: 900px;
+    margin: 20px auto 0 auto;
+
+    font-size: 0.875rem;
+    line-height: 1.4;
+    text-align: justify;
+}
+
+/*
+ * Feroxi Forge cookie consent overlay
+ */
+
+#myCookieConsent {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    width: 100%;
+    height: 50vh;
+
+    z-index: 999;
+
+    display: none;
+    align-items: center;
+    justify-content: center;
+
+    background: var(--cookie-popup-bkgd);
+    color: var(--cookie-body-text);
+
+    text-align: center;
+}
+
+#cookieConsentContent {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    width: calc(100% - 4rem);
+    max-width: 68rem;
+    padding: 2rem;
+
+    border: 0.125rem solid var(--cookie-panel-border);
+    border-radius: 0.625rem;
+
+    background: var(--cookie-panel-bkgd);
+    color: var(--cookie-body-text);
+
+    transform: translate(-50%, -50%);
+}
+
+#cookieConsentTitle {
+    color: var(--cookie-title-text);
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+#cookieConsentContent p {
+    font-size: 1.125rem;
+}
+
+#cookieConsentButtons {
+    margin-top: 30px;
+
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+#cookieConsentButtons a {
+    min-width: 10rem;
+    padding: 0.75rem 1.5rem;
+
+    border: 0.125rem solid;
+    border-radius: 0.625rem;
+
+    color: var(--cookie-button-text);
+
+    font-size: 1.125rem;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+#cookieButton {
+    background: var(--cookie-accept);
+    border-color: var(--cookie-accept);
+}
+
+#nocookieToday {
+    background: var(--cookie-decline);
+    border-color: var(--cookie-decline);
+}
+
+/*
+ * Feroxi Forge server tables
+ */
+.server-heading {
+    text-align: center;
+}
+
+.server-divider {
+    width: 25%;
+    margin: 30px auto;
+    border: 0;
+    border-top: 2px solid var(--main-border);
+}
+
+/* Kara Dot centred page divider */
+.kara-dot {
+    width: 8px;
+    height: 8px;
+    margin: 30px auto;
+    border-radius: 50%;
+    background: var(--main-border);
+}
+
+.server-table-wrap {
+    margin: 20px 50px 30px 50px;
+    overflow-x: auto;
+    border-radius: 10px;
+}
+
+.server-table {
+    width: 100%;
+    min-width: 900px;
+    border-collapse: separate;
+    border-spacing: 0;
+    border: 1px solid var(--main-border);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.server-table td {
+    width: 20%;
+    padding: 0.75rem 1rem;
+    border-right: 1px solid var(--main-border);
+    border-bottom: 1px solid var(--main-border);
+    vertical-align: top;
+    overflow-wrap: anywhere;
+}
+
+.server-table td:last-child {
+    border-right: 0;
+}
+
+.server-topbar td,
+.server-connect-row td {
+    background: var(--main-border);
+    color: var(--cookie-button-text);
+    border-right: 0;
+    border-bottom: 0;
+}
+
+.server-topbar td {
+    text-align: center;
+}
+
+.server-connect-row td {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    text-align: center;
+    font-weight: 700;
+}
+
+.server-connect-row code {
+    color: inherit;
+}
+
+.server-spacer td {
+    height: 1px;
+    padding: 0;
+    border: 0;
+    background: var(--dark-mode-bkgd);
+}
+
+.server-data-body tr:nth-child(odd) td {
+    background: var(--server-row-a);
+}
+
+.server-data-body tr:nth-child(even) td {
+    background: var(--server-row-b);
+}
+
+.server-data-body tr:last-child td {
+    border-bottom: 0;
+}
+
+.server-data-body td {
+    color: var(--server-row-text);
+}
+
+.server-stat-label,
+.server-stat-value {
+    display: block;
+}
+
+.server-stat-label {
+    margin-bottom: 0.25rem;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.server-stat-value {
+    font-weight: 700;
+}
+
+.server-status {
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    margin-right: 0.4rem;
+    border-radius: 3px;
+    vertical-align: -1px;
+}
+
+.server-status-online {
+    background: var(--server-online);
+}
+
+.server-status-offline {
+    background: var(--server-offline);
+}
+
+
+/* #EOF<*>  */
