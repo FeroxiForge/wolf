@@ -126,7 +126,7 @@ The game relies on its HTML, CSS, JavaScript and supporting assets being kept at
 | [`avhub/audio/`](avhub/audio/) | Sound effects used by the game |
 | [`htm/font/`](htm/font/) | Font assets referenced by the stylesheet |
 | [`img/`](img/) | Image assets referenced by GitHub README.md |
-| [`LICENSE`](LICENSE) | Copyright notice and MIT License terms |
+| [`LICENSE`](LICENSE) | Copyright notice &amp; MIT License terms |
 
 ### Audio Assets
 
@@ -137,7 +137,7 @@ The JavaScript references the following sound effects in `avhub/audio/`:
 
 Keep these files at their expected paths and retain their filenames so the game can load them correctly.
 
-The same applies to the fonts and images referenced by the stylesheets. If you move or rename an asset, update the corresponding reference in the code.
+The same applies to the `feroxi_wolf.js` and `feroxi.css` stylesheet. If you move or rename any assets, update the corresponding reference in the code.
 
 ## License
 
