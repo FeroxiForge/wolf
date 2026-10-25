@@ -2,7 +2,7 @@
 
 # Wheel Of Lost Fortune - a.k.a WOLF
 
-Wheel Of Lost Fortune [WOLF] is a JavaScript browser game based on Rust's Bandit Camp Big Wheel.
+Wheel Of Lost Fortune [WOLF] is a JavaScript browser game based on [Rust](https://rust.facepunch.com)'s Bandit Camp Big Wheel.
 
 WOLF is a conceptual Rust gambling game for fun and wasting free time. There's no actual currency involved and the <i>scrap</i> used as currency has no real world value. It's purely cosmetic for game purposes.
 
