@@ -137,7 +137,7 @@ The JavaScript references the following sound effects in `avhub/audio/`:
 
 Keep these files at their expected paths and retain their filenames so the game can load them correctly.
 
-The same applies to the `feroxi_wolf.js` and `feroxi.css` stylesheet. If you move or rename any assets, update the corresponding reference in the code.
+The same applies to the `feroxi_wolf.js` client-side game engine and `feroxi.css` stylesheet. If you move or rename any assets, update the corresponding reference in the code.
 
 ## License
 
