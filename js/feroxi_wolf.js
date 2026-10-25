@@ -2,8 +2,9 @@
  * Feroxi Forge - rust.penthux.net - Wheel Of Lost Fortune [WOLF]
  *
  * 2026-10-10 v1.0.1 - Shikkoka - rust.penthux.net [working js prototype]
- * 2026-10-18 v2.1.7 - AarokZ - Penthux.NET [new engine c/w sfx]
+ * 2026-10-18 v2.1.7 - AarokZ - FREELANCE [new engine c/w sfx]
  * 2026-10-21 v2.3.2 - Exaga - Penthux.NET [buttons + spin rules/timings]
+ * 2026-10-21 v2.3.3 - Koordex - Penthux.NET [instructions clean-up]
  *
  * Copyright (c) 2026 Penthux.NET (rust.penthux.net)
  *
