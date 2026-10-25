@@ -101,7 +101,7 @@ If you run out of Scrap, you can manually restore your balance.
    location.reload();
    ```
 
-- *12* is the amount of scrap to allocate. Increase/decrease this value accordingly.
+**Note:** *12* is the amount of scrap to allocate. Increase/decrease this value accordingly.
 
 Alternatively, remove the browser-stored value and let the game initialise it again:
 
