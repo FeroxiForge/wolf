@@ -10,6 +10,19 @@ This software is for entertainment purposes only and is released under the [MIT 
 
 **[Play Wheel Of Lost Fortune online](https://rust.penthux.net/index.php?p=wolf)**
 
+## Table of Contents
+
+- [Running WOLF](#running-wolf)
+- [How to Play](#how-to-play)
+  - [Placing Bets](#placing-bets)
+  - [Wheel Sectors and Payouts](#wheel-sectors-and-payouts)
+- [Scrap Balance and Storage](#scrap-balance-and-storage)
+  - [Resetting Scrap](#resetting-scrap)
+- [Project Files and Assets](#project-files-and-assets)
+  - [Audio Assets](#audio-assets)
+- [License](#license)
+- [Copyright](#copyright)
+
 ## Running WOLF
 
 WOLF is a browser-based game built with HTML, CSS and JavaScript.
