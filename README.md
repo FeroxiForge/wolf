@@ -13,6 +13,7 @@ Live WOLF v2.3.2 version: **[Play Wheel Of Lost Fortune online](https://rust.pen
 ## Table of Contents
 
 - [Running WOLF](#running-wolf)
+- [WOLF Screenshot](#wolf-screenshot)
 - [How to Play](#how-to-play)
   - [Placing Bets](#placing-bets)
   - [Wheel Sectors and Payouts](#wheel-sectors-and-payouts)
@@ -34,6 +35,10 @@ WOLF is a browser-based game built with HTML, CSS and JavaScript.
 No build step or package installation is required. JavaScript must be enabled in your browser.
 
 To publish the game using GitHub Pages, see the [official GitHub Pages documentation](https://docs.github.com/en/pages/getting-started-with-github-pages/creating-a-github-pages-site).
+
+## WOLF Screenshot
+
+![WOLF Screenshot](img/wolf_ss.jpg)
 
 ## How to Play
 
