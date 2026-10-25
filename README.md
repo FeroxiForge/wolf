@@ -8,7 +8,7 @@ WOLF is a conceptual Rust gambling game for fun and wasting free time. There's n
 
 This software is for entertainment purposes only and is released under the [MIT License](LICENSE). The <i>scrap</i> is fictional in-game currency stored in the browser's `localStorage`.
 
-Live WOLF v2.3.2 version: **[Play Wheel Of Lost Fortune online](https://rust.penthux.net/index.php?p=wolf)**
+Live WOLF v2.3.3 version: **<a href="https://rust.penthux.net/index.php?p=wolf" target="_blank" rel="noopener noreferrer">Play Wheel Of Lost Fortune online</a>**
 
 ## Table of Contents
 
